@@ -2,16 +2,17 @@
   <div class="contenedor">
     <div class="five">
     <form class="formulario-registro" @submit.prevent="registrarUsuario">
-      <h1>Registro de Usuario</h1>
-
-      <label for="username">Usuario:</label>
-      <input type="text" id="username" v-model="usuario.username" required />
+      <img src="../assets/logo.png" alt="Logo" class="logo">
+      <h1>Registro de Estudiante</h1>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" v-model="usuario.nombre" required />
 
       <label for="password">Contraseña:</label>
       <input type="password" id="password" v-model="usuario.password" required />
 
       <button type="submit">Registrar</button>
     </form>
+    
     </div>
   </div>
 </template>
@@ -20,7 +21,7 @@ import { ref } from 'vue'
 
 // Definir los datos de registro
 const usuario = ref({
-  username: '',
+  nombre: '',
   password: ''
 })
 
@@ -32,6 +33,23 @@ const registrarUsuario = () => {
 </script>
 
 <style scoped>
+.fondo {
+  background-image: url('@/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0px auto;
+  display: block;
+}
   .contenedor {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,12 +63,16 @@ const registrarUsuario = () => {
 }
 
 .formulario-registro {
-  background-color: #1f3d24; 
+  background-color: #9bb055;
   padding: 2rem;
   border-radius: 8px;
   color: white;
   text-align: center;
   width: 400px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  font: 16px georgia, serif;
 }
 label {
   display: block;
@@ -71,15 +93,18 @@ input {
 }
 
 button {
-  background-color: #42b983;
+  background-color: #3c763d;
   color: white;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  font: 16px georgia, serif;
+  width: 100%; 
 }
 
 button:hover {
-  background-color: #368c6d;
+  background-color: #2a5f2c;
 }
 </style>

@@ -5,12 +5,14 @@ import App from '../App.vue'
 import home from '../components/home.vue'
 import Register from '../components/Register.vue'
 import dashboard from '../components/dashboard.vue'
+import login from '../components/login.vue'
 
 const routes = [
     { path: '/', component: App },
     { path: '/home', component: home },
     { path: '/register', component: Register },
-    { path: '/dashboard', component: dashboard }
+    { path: '/dashboard', component: dashboard },
+    { path: '/login', component: login }
 ]
 
 const router = createRouter({
