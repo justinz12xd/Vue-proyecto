@@ -1,5 +1,5 @@
 <template>
-  <!-- HTML que se mostrará en la vista -->
+  <Navbar />
   <div>
     <h1>Mi Vista</h1>
     <p>Bienvenido a esta vista</p>
@@ -7,13 +7,11 @@
 </template>
 
 <script setup>
-// Aquí va el código JavaScript (variables, métodos, etc.)
-const mensaje = 'Hola desde Vue'
+import Navbar from './navbar.vue'
+// ...existing code...
 </script>
 
-
-<style scoped>
-/* Estilos específicos de este componente */
+<style src="@/assets/navbar.css" scoped>
 h1 {
   color: #42b983;
 }
