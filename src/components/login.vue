@@ -1,6 +1,7 @@
 <template>
+  <div class="fondo">
+
   <div class="contenedor">
-    <div class="fondo">
       <div class="formulario-registro">
         <img src="../assets/logo.png" alt="Logo" class="logo">
         <h1>Iniciar Sesión</h1>
@@ -12,6 +13,7 @@
         <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -36,29 +38,34 @@ const iniciarSesion = () => {
   width: 100%;
   overflow-x: hidden;
 }
-.contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-}
- .fondo {
   background-image: url('@/assets/background.jpg');
   background-color: #f0f0f0; 
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-
   border: 1px solid rgb(0, 0, 0);
-} 
+  z-index: 0;
+}
 
+.contenedor {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
 .formulario-registro {
   background-color: #9bb055;
   padding: 2rem;
@@ -126,9 +133,11 @@ h1 {
 }
 
 /* Optional: Improve responsiveness for smaller screens */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .formulario-registro {
-    padding: 1.5rem;
+    padding: 1rem;
+    width: 100vw;
+    
   }
 
   h1 {
@@ -137,6 +146,8 @@ h1 {
 
   button {
     font-size: 14px;
+    
   }
+
 }
 </style>

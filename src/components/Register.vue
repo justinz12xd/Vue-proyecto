@@ -1,4 +1,5 @@
 <template>
+<div class="fondo">
   <div class="contenedor">
     <div class="five">
     <form class="formulario-registro" @submit.prevent="registrarUsuario">
@@ -12,9 +13,9 @@
 
       <button type="submit">Registrar</button>
     </form>
-    
     </div>
   </div>
+</div>
 </template>
 <script setup>
 import { ref } from 'vue'
@@ -34,15 +35,23 @@ const registrarUsuario = () => {
 
 <style scoped>
 .fondo {
-  background-image: url('@/assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
+  background-image: url('@/assets/background.jpg');
+  background-color: #f0f0f0; 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+ 
+  border: 1px solid rgb(0, 0, 0);
+  z-index: 0;
 }
 .logo {
   width: 100px;
@@ -50,17 +59,20 @@ const registrarUsuario = () => {
   margin: 0px auto;
   display: block;
 }
-  .contenedor {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
+.contenedor {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
 
   /* justify-content: center; 
   align-items: center; 
   background-color: #212121; 
   text-align: center; */
-}
 
 .formulario-registro {
   background-color: #9bb055;
