@@ -2,19 +2,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from '../App.vue'
-import home from '../components/home.vue'
-import Register from '../components/Register.vue'
-import dashboard from '../components/dashboard.vue'
-import login from '../components/login.vue'
-import perfil from '../components/perfil.vue'
-
+import home from '../views/home.vue'
+import Register from '../views/Register.vue'
+import dashboard from '../views/dashboard.vue'
+import login from '../views/Login.vue'
+import perfil from '../views/perfil.vue'
+import calendario from '../views/calendario.vue'
 const routes = [
-    { path: '/', component: App },
-    { path: '/home', component: home },
-    { path: '/register', component: Register },
+    // { path: '/', component: App },
+    { path: '/', component: home },
+    { path: '/registro', component: Register },
     { path: '/dashboard', component: dashboard },
-    { path: '/login', component: login },
-    { path: '/perfil', component: perfil }
+    { path: '/login',component: login },
+    { path: '/perfil', component: perfil },
+    { path: '/calendario', component: calendario }
 ]
 
 const router = createRouter({

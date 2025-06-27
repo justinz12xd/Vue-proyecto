@@ -1,14 +1,12 @@
 <template>
+
   <Navbar />
-  <div>
-    <h1>Mi Vista</h1>
-    <p>Bienvenido a esta vista</p>
-  </div>
+  <Background />
 </template>
 
 <script setup>
-import Navbar from './navbar.vue'
-// ...existing code...
+import Navbar from '@/components/navbar2.vue';
+import Background from '@/components/background.vue';
 </script>
 
 <style src="@/assets/navbar.css" scoped>

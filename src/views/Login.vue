@@ -1,35 +1,46 @@
 <template>
-  <div class="fondo">
-
+  <Background />
   <div class="contenedor">
       <div class="formulario-registro">
         <img src="../assets/logo.png" alt="Logo" class="logo">
         <h1>Iniciar Sesión</h1>
+      <form @submit.prevent="iniciarSesion">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" v-model="usuario.nombre" required />
         <label for="password">Contraseña:</label>
         <input type="password" id="password" v-model="usuario.password" required />
-        <button @click="iniciarSesion">Iniciar Sesión</button>
-        <p>¿No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+        <p>¿No tienes cuenta? <a href="/registro">Regístrate aquí</a></p>
       </div>
     </div>
-    
-  </div>
+
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import Background from '../components/background.vue'
 
 const usuario = ref({
   nombre: '',
   password: ''
 })
 
+const router = useRouter()
+
 const iniciarSesion = () => {
-  console.log('Iniciar sesión con:', usuario.value)
+  const cuentas = JSON.parse(localStorage.getItem('cuentas')) || {}
+  const user = cuentas[usuario.value.nombre]
+  if (user && user.password === usuario.value.password) {
+    localStorage.setItem('usuarioActual', usuario.value.nombre)
+    router.push('/dashboard')
+  } else {
+    alert('Usuario o contraseña incorrectos')
+  }
 }
 </script>
-
+<style scoped src="../assets/background.css"> </style>
 <style scoped>
 :global(html, body) {
   margin: 0;
@@ -37,24 +48,6 @@ const iniciarSesion = () => {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-}
-.fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('@/assets/background.jpg');
-  background-color: #f0f0f0; 
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  border: 1px solid rgb(0, 0, 0);
-  z-index: 0;
 }
 
 .contenedor {
@@ -75,14 +68,7 @@ const iniciarSesion = () => {
   width: 90vw;
   max-width: 400px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-}
-
-.logo {
-  width: 100px;
-  height: 80px;
-  margin: 0 auto 1rem;
-  display: block;
-  border-radius: 50%;
+  background-color: rgba(155, 176, 85, 0.6); 
 }
 
 label {
@@ -130,24 +116,5 @@ h1 {
   margin-bottom: 20px;
   color: white;
   font: bold 24px georgia, serif;
-}
-
-/* Optional: Improve responsiveness for smaller screens */
-@media (max-width: 600px) {
-  .formulario-registro {
-    padding: 1rem;
-    width: 100vw;
-    
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  button {
-    font-size: 14px;
-    
-  }
-
 }
 </style>

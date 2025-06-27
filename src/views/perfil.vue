@@ -6,7 +6,7 @@
     </div>
 </template>
 <script setup> 
-import Navbar from './navbar.vue' 
+import Navbar from '@/components/navbar.vue' 
 </script>
 <style src="@/assets/navbar.css" scoped>
 h1 {
