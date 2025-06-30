@@ -1,5 +1,6 @@
 <template>
   <Background />
+  <Navbar2 />
   <div class="contenedor">
       <div class="formulario-registro">
         <img src="../assets/logo.png" alt="Logo" class="logo">
@@ -21,6 +22,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Background from '../components/background.vue'
+import Navbar2 from '@/components/navbar2.vue'
 
 const usuario = ref({
   nombre: '',
@@ -68,7 +70,7 @@ const iniciarSesion = () => {
   width: 90vw;
   max-width: 400px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  background-color: rgba(155, 176, 85, 0.6); 
+  /* background-color: rgba(155, 176, 85, 0.9);  */
 }
 
 label {
