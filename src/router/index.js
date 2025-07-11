@@ -8,6 +8,8 @@ import dashboard from '../views/dashboard.vue'
 import login from '../views/Login.vue'
 import perfil from '../views/perfil.vue'
 import calendario from '../views/calendario.vue'
+import Subir_fichas from '@/views/subir_fichas.vue'
+import Notas_tutor from '@/views/Notas_tutor.vue'
 const routes = [
     // { path: '/', component: App },
     { path: '/', component: home },
@@ -15,7 +17,9 @@ const routes = [
     { path: '/dashboard', component: dashboard },
     { path: '/login',component: login },
     { path: '/perfil', component: perfil },
-    { path: '/calendario', component: calendario }
+    { path: '/calendario', component: calendario },
+    { path: '/subir-fichas', component: Subir_fichas },
+    {path: '/notastutor', component: Notas_tutor}
 ]
 
 const router = createRouter({

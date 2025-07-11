@@ -7,7 +7,7 @@
       <img src="../assets/logo.png" alt="Logo" class="logo">
       <h1>Registro de Estudiante</h1>
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" v-model="usuario.nombre" required />
+      <input v-focus type="text" id="nombre" v-model="usuario.nombre" required />
       <label for="email">Correo electronico:</label>
       <input type="email" id="email" v-model="usuario.email" required />
 
@@ -34,6 +34,9 @@
 import { ref } from 'vue'
 import Background from '../components/background.vue'
 import navbar from '@/components/navbar2.vue'
+const vFocus = {
+  mounted: (el) => el.focus()
+}
 
 const usuario = ref({
   nombre: '',
@@ -58,8 +61,7 @@ function handleRegistro() {
   localStorage.setItem("cuentas", JSON.stringify(cuentas))
   localStorage.setItem("usuarioActual", usuario.value.nombre)
   alert("Registro exitoso. Ahora puedes iniciar sesión.")
-  // Redirigir si quieres
-  // window.location.href = "/login"
+  window.location.href = "/login"
 }
 </script>
 
@@ -74,11 +76,6 @@ function handleRegistro() {
   align-items: center;
   z-index: 1;
 }
-
-  /* justify-content: center; 
-  align-items: center; 
-  background-color: #212121; 
-  text-align: center; */
 select {
   width: 100%;
   padding: 0.5rem;
@@ -92,13 +89,14 @@ select {
   border-radius: 8px;
   color: white;
   text-align: center;
+  height: 100%;
   width: 400px;
   margin: 50px auto;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.60);
   font: 16px georgia, serif;
-  background-color: rgba(155, 176, 85, 0.6); 
-  margin-top: 15vh;
+  /* background-color: rgba(155, 176, 85, 0.6);  */
+  margin-top: 10rem;
 }
 h1 {
   font-size: 24px;

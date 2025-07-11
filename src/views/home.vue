@@ -4,7 +4,6 @@
   <div class="container">
     <img class="Logo2" src="@/assets/logo.png" alt="Logo ULEAM Capacidades" />
     
-    <!-- Mueve este bloque AQUI dentro de .container -->
     <div class="home">
       <h1>Bienvenido a ULEAM Capacidades</h1>
       <p>¡Bienvenido a nuestra plataforma de Capacidades Especiales.</p>
@@ -44,7 +43,7 @@ import Background from '@/components/background.vue';
 </script>
 
 <style scoped>
-/* Parte original */
+
 
 
 
@@ -70,7 +69,7 @@ h1, p {
   z-index: 1;
 } 
 .home {
-  text-align: right; /* alinea texto dentro del bloque */
+  text-align: right; 
   flex: 1;
   position: absolute;
   left: 40%;
@@ -85,7 +84,7 @@ h1, p {
   top: 12%;
 }
 
-/* NUEVO: sección ¿Quiénes somos? */
+
 .quienes-somos {
   margin-top: 60vh;
   padding: 2rem;

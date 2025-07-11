@@ -5,7 +5,7 @@
 
       <li><router-link to="/perfil">Perfil</router-link></li>
       <li><router-link to="/dashboard">Sala Principal</router-link></li>
-      <li><router-link to="/editar_perfil">Editar Perfil</router-link></li>
+      <!-- <li><router-link to="/editar_perfil">Editar Perfil</router-link></li> -->
       <li><router-link to="/calendario">Calendario</router-link></li>
     </ul>
   </nav>
