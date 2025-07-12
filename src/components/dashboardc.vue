@@ -32,9 +32,9 @@
           <div class="botones">
       <router-link to="/editar_perfil"><button>Editar Perfil</button></router-link>
       <!-- <router-link to="/calendario"><button>Calendario</button></router-link> -->
-      <router-link to="/subir_fichas"><button>Subir Fichas Médicas</button></router-link>
-      <router-link to="/hablar_tutor"><button>Notas de Tutor</button></router-link>
-      <router-link to="/agendar_citas"><button>Agendar Cita Médica</button></router-link>
+      <router-link to="/subir-fichas"><button>Subir Fichas Médicas</button></router-link>
+      <router-link to="/notastutor"><button>Notas de Tutor</button></router-link>
+      <router-link to="/agendar_cita"><button>Agendar Cita Médica</button></router-link>
           </div>
     </div>
   </div>
@@ -114,6 +114,7 @@ function formatFecha(fechaStr) {
   justify-content: center;
   align-items: center;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -121,7 +122,7 @@ function formatFecha(fechaStr) {
   background: #f0f0f0;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  padding: 2rem;
+  padding: 3rem;
   width: 100%;
   max-width: 850px;
   /* margin: 2rem auto 0 auto; */

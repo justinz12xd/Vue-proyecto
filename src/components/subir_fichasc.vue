@@ -5,7 +5,7 @@
     <p>Sube tu archivo PDF, una descripción y la fecha correspondiente.</p>
   </div>
   <div class="subir-fichas">
-    <h2>Formulario</h2>
+    <h2>Subir Ficha</h2>
     <input id="input-pdf" type="file" accept=".pdf" @change="handleFileChange" />
     <textarea v-model="descripcion" placeholder="Descripción de la ficha"></textarea>
     <input type="date" v-model="fecha" />
@@ -62,7 +62,8 @@ function subirFicha() {
 <style scoped>
 .cabecera {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
+
 }
 .subir-fichas {
   max-width: 600px;
@@ -79,6 +80,9 @@ textarea, input[type="date"] {
   width: 100%;
   padding: 0.5rem;
 }
+input[type="file"] {
+  color:black;
+}
 button {
   background: #4CAF50;
   color: white;
@@ -86,5 +90,15 @@ button {
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
+}
+h1, p {
+  color: #2d4225;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  color: black;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+
 }
 </style>

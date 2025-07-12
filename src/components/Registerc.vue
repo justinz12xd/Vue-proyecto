@@ -22,7 +22,13 @@
         <option value="Humanidades">Humanidades</option>
       </select>
       <label for="discapacidad">Discapacidad:</label>
-      <input type="text" id="discapacidad" v-model="usuario.discapacidad" required />
+      <select id="discapacidad" v-model="usuario.discapacidad" required>
+        <option value="" disabled selected>Seleccione su discapacidad</option>
+        <option value="Discapacidad Visual">Discapacidad Visual</option>
+        <option value="Discapacidad Auditiva">Discapacidad Auditiva</option>
+        <option value="Discapacidad Motriz">Discapacidad Motriz</option>
+        <option value="Discapacidad Intelectual">Discapacidad Intelectual</option>
+      </select>
 
       <button type="submit">Registrar</button>
     </form>
@@ -44,6 +50,7 @@ const usuario = ref({
   password: '',
   facultad: '',
   discapacidad: ''
+
 })
 
 function handleRegistro() {
