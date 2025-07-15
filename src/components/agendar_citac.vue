@@ -106,12 +106,14 @@ const agendarCita = () => {
 <style scoped>
 .agendar-cita {
     text-align: center;
-    margin-top: 6rem;
+    margin: 7rem auto; /* Cambia el valor según lo que necesites */
     width: 60vw;
     min-height: 200px;
-    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 4rem;
     background-color: #e5f4d4;
 }
 
@@ -144,14 +146,20 @@ input, select {
     cursor: pointer;
     font-size: 16px;
     width: 50%;
-    margin-left: 25%;
     margin-top: 1rem;
 }
 
 .btn-agendar:hover {
     background-color: #2a5f2c;
 }
-
+h1 {
+    color: #2d4225;
+    margin-bottom: 0.5rem;
+}
+h2 {
+    color: #2d4225;
+    margin-bottom: 0.5rem;
+}
 .mensaje {
     margin-top: 1rem;
     padding: 1rem;
