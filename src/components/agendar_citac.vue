@@ -33,6 +33,7 @@
                 </select>
             </div>
             <button type="submit" class="btn-agendar">Agendar</button>
+
         </form>
         <div v-if="mensaje" class="mensaje">{{ mensaje }}</div>
     </div>

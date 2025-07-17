@@ -28,8 +28,10 @@
           <span>{{ day }}</span>
           <div v-if="hasMedicalAppointment(day)" class="medical-dot"></div>
           <div v-if="getEventsForDay(day).length > 0" class="event-dot"></div>
+          
         </div>
       </div>
+      <button type="button" class="volver" @click="volver">Volver</button>
     </div>
 
     <div v-if="selectedDay" class="event-modal">
@@ -66,14 +68,16 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import navbar from '@/components/navbar.vue'
-
+import { useRouter } from 'vue-router'
 const days = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']
 const monthNames = [
   'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
   'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
 ]
-
+const router = useRouter()
+const volver=()=>{
+  router.push('/dashboard')
+}
 const month = ref(new Date().getMonth())
 const year = ref(new Date().getFullYear())
 const selectedDay = ref(null)
@@ -158,6 +162,19 @@ const padZero = (num) => num.toString().padStart(2, '0')
 </script>
 
 <style scoped>
+.volver{
+  background-color: #4CAF50;
+  max-width: 450%;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+
+}
 .calendar-container {
   max-width: 800px;
   margin: 0 auto;
