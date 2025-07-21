@@ -32,6 +32,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
+import '../style/editar-perfil.css'
 
 const usuario = ref({
   nombre: '',
@@ -82,64 +83,3 @@ onMounted(() => {
   }
 })
 </script>
-
-<style scoped>
-.contenedor {
-    background-color: #e5f4d4;
-    width: 60vw;
-    max-width: 600px;
-    min-height: 200px;
-    margin: 2rem auto;
-    border-radius: 12px;
-    padding: 6rem;
-    text-align: center;
-    margin-top: 8rem;
-    
-}
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #9bb055;
-}
-
-h2 {
-    color: #9bb055;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-input {
-    max-width: 450px;
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-button {
-  background-color: #3c763d;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-}
-button:hover {
-  background-color: #2a5f2c;
-}
-select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-</style>

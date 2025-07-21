@@ -6,99 +6,65 @@
   </div>
   <div class="subir-fichas">
     <h2>Subir Ficha</h2>
-    <input id="input-pdf" type="file" accept=".pdf" @change="handleFileChange" />
-    <textarea v-model="descripcion" placeholder="Descripción de la ficha"></textarea>
+    <input
+      id="input-pdf"
+      type="file"
+      accept=".pdf"
+      @change="handleFileChange"
+    />
+    <textarea
+      v-model="descripcion"
+      placeholder="Descripción de la ficha"
+    ></textarea>
     <input type="date" v-model="fecha" />
     <button @click="subirFicha">Subir Ficha</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import Navbar from './navbar.vue'
+import { ref } from "vue";
+import Navbar from "./navbar.vue";
+import '../style/subir-fichas.css'
 
-const descripcion = ref('')
-const fecha = ref('')
-const archivo = ref(null)
+const descripcion = ref("");
+const fecha = ref("");
+const archivo = ref(null);
 
 function handleFileChange(e) {
-  const file = e.target.files[0]
-  if (file && file.type !== 'application/pdf') {
-    alert('Solo se aceptan archivos PDF')
-    archivo.value = null
-    return
+  const file = e.target.files[0];
+  if (file && file.type !== "application/pdf") {
+    alert("Solo se aceptan archivos PDF");
+    archivo.value = null;
+    return;
   }
-  archivo.value = file
+  archivo.value = file;
 }
 
 function subirFicha() {
-  const usuario = (localStorage.getItem('usuarioActual') || '').trim()
-  if (!usuario) return alert('Usuario no autenticado')
-  if (!archivo.value || !descripcion.value || !fecha.value) return alert('Completa todos los campos')
+  const usuario = (localStorage.getItem("usuarioActual") || "").trim();
+  if (!usuario) return alert("Usuario no autenticado");
+  if (!archivo.value || !descripcion.value || !fecha.value)
+    return alert("Completa todos los campos");
 
-  const reader = new FileReader()
+  const reader = new FileReader();
   reader.onload = () => {
-    const fichas = JSON.parse(localStorage.getItem('fichasMedicas') || '{}')
-    fichas[usuario] = fichas[usuario] || []
+    const fichas = JSON.parse(localStorage.getItem("fichasMedicas") || "{}");
+    fichas[usuario] = fichas[usuario] || [];
     fichas[usuario].push({
       nombre: archivo.value.name,
       descripcion: descripcion.value,
       fecha: fecha.value,
-      archivo: reader.result
-    })
-    localStorage.setItem('fichasMedicas', JSON.stringify(fichas))
-    alert('Ficha subida correctamente')
+      archivo: reader.result,
+    });
+    localStorage.setItem("fichasMedicas", JSON.stringify(fichas));
+    alert("Ficha subida correctamente");
 
     // Limpiar formulario
-    descripcion.value = ''
-    fecha.value = ''
-    archivo.value = null
-    document.getElementById('input-pdf').value = ''
-  }
-  reader.readAsDataURL(archivo.value)
+    descripcion.value = "";
+    fecha.value = "";
+    archivo.value = null;
+    document.getElementById("input-pdf").value = "";
+  };
+  reader.readAsDataURL(archivo.value);
 }
 </script>
-
-<style scoped>
-.cabecera {
-  text-align: center;
-  margin-top: 6rem;
-
-}
-.subir-fichas {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-textarea, input[type="date"] {
-  width: 100%;
-  padding: 0.5rem;
-}
-input[type="file"] {
-  color:black;
-}
-button {
-  background: #4CAF50;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-h1, p {
-  color: #2d4225;
-  margin-bottom: 0.5rem;
-}
-h2 {
-  color: black;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-
-}
-</style>

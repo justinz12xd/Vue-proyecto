@@ -1,45 +1,49 @@
 <template>
-  <Background />
-  <navbar />
+
+  <Navbar2 />
   <div class="contenedor">
-    <div class="five">
-    <form class="formulario-registro" @submit.prevent="handleRegistro">
+    <div class="formulario-registro">
       <img src="../assets/logo.png" alt="Logo" class="logo">
       <h1>Registro de Estudiante</h1>
-      <label for="nombre">Nombre:</label>
-      <input v-focus type="text" id="nombre" v-model="usuario.nombre" required />
-      <label for="email">Correo electronico:</label>
-      <input type="email" id="email" v-model="usuario.email" required />
+      <form @submit.prevent="handleRegistro">
+        <label v-focus for="nombre">Nombre:</label>
+        <input type="text" id="nombre" v-model="usuario.nombre" required />
+        
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" v-model="usuario.email" required />
 
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" v-model="usuario.password" required />
-      <label for="Facultad">Facultad:</label>
-      <select id="facultad" v-model="usuario.facultad" required>
-        <option value="" disabled selected>Seleccione su facultad</option>
-        <option value="Ingeniería">Ingeniería</option>
-        <option value="Ciencias Sociales">Ciencias Sociales</option>
-        <option value="Ciencias de la Salud">Ciencias de la Salud</option>
-        <option value="Humanidades">Humanidades</option>
-      </select>
-      <label for="discapacidad">Discapacidad:</label>
-      <select id="discapacidad" v-model="usuario.discapacidad" required>
-        <option value="" disabled selected>Seleccione su discapacidad</option>
-        <option value="Discapacidad Visual">Discapacidad Visual</option>
-        <option value="Discapacidad Auditiva">Discapacidad Auditiva</option>
-        <option value="Discapacidad Motriz">Discapacidad Motriz</option>
-        <option value="Discapacidad Intelectual">Discapacidad Intelectual</option>
-      </select>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" v-model="usuario.password" required />
 
-      <button type="submit">Registrar</button>
-    </form>
+        <label for="facultad">Facultad:</label>
+        <select id="facultad" v-model="usuario.facultad" required>
+          <option value="" disabled selected>Seleccione su facultad</option>
+          <option value="Ingeniería">Ingeniería</option>
+          <option value="Ciencias Sociales">Ciencias Sociales</option>
+          <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+          <option value="Humanidades">Humanidades</option>
+        </select>
+
+        <label for="discapacidad">Discapacidad:</label>
+        <select id="discapacidad" v-model="usuario.discapacidad" required>
+          <option value="" disabled selected>Seleccione su discapacidad</option>
+          <option value="Discapacidad Visual">Discapacidad Visual</option>
+          <option value="Discapacidad Auditiva">Discapacidad Auditiva</option>
+          <option value="Discapacidad Motriz">Discapacidad Motriz</option>
+          <option value="Discapacidad Intelectual">Discapacidad Intelectual</option>
+        </select>
+
+        <button type="submit">Registrar</button>
+      </form>
+      <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a></p>
     </div>
   </div>
-
 </template>
+
 <script setup>
 import { ref } from 'vue'
-import Background from '../components/background.vue'
-import navbar from '@/components/navbar2.vue'
+import Navbar2 from '@/components/navbar2.vue'
+
 const vFocus = {
   mounted: (el) => el.focus()
 }
@@ -50,7 +54,6 @@ const usuario = ref({
   password: '',
   facultad: '',
   discapacidad: ''
-
 })
 
 function handleRegistro() {
@@ -73,62 +76,50 @@ function handleRegistro() {
 </script>
 
 <style scoped src="../assets/background.css"></style>
+
 <style scoped>
 .contenedor {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #edecec;
+  max-width: none !important;
 }
-select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+
 .formulario-registro {
-  background-color: #9bb055;
-  padding: 2rem;
+  background-color: #edecec;
+  padding: 1rem;
+  /* margin-top: 0rem; */
   border-radius: 8px;
-  color: white;
+  color: black;
   text-align: center;
-  height: 100%;
-  width: 400px;
-  margin: 50px auto;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.60);
-  font: 16px georgia, serif;
-  /* background-color: rgba(155, 176, 85, 0.6);  */
-  margin-top: 10rem;
+  width: 90vw;
+  max-width: 400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.50);
 }
-h1 {
-  font-size: 24px;
-  margin-bottom: 1rem;
-  font-weight: bold;
-    color: #112712; 
-}
+
 label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #112712; 
-}
-/*con esto se centraliza el formulario pd: soy justin*/
-.five {
-  grid-column: 20 / 31; 
-  grid-row: 1 / 5; 
+  margin-left: 0.7rem;
+  text-align: left;
 }
 
-input {
-  width: 100%;
+input, select {
+  width: 95%;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 button {
@@ -139,11 +130,30 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font: 16px georgia, serif;
-  width: 100%; 
+  width: 60%;
+  margin-top: 0.5rem;
 }
 
 button:hover {
   background-color: #2a5f2c;
+}
+
+a {
+  color: #2a5f2c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 1rem;
+  color: black;
+  font: 16px georgia, serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+  font: bold 24px georgia, serif;
 }
 </style>

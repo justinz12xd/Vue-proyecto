@@ -1,40 +1,128 @@
-@media (max-width: 600px) {
-  .formulario-registro {
-    padding: 1rem;
-    width: 100vw; 
-  }
-  h1 {
-    font-size: 20px;
-  }
-  button {
-    font-size: 14px; 
-  }
+/* Variables de breakpoints */
+:root {
+  --mobile: 640px;
+  --tablet: 768px;
+  --desktop: 1024px;
 }
-.logo {
-    background-image: url('@/assets/logo.png');
-  width: 100px;
-  height: 80px;
-  margin: 0 auto 1rem;
-  display: block;
-  border-radius: 50%;
-}
+
+/* Estilos base para el fondo */
 .fondo {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('@/assets/background.jpg');
-  background-color: #f0f0f0; 
-  background-size: cover; 
+  background-color: #f0f0f0;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  border: 1px solid rgb(0, 0, 0);
-  z-index: 0;
+  z-index: -1;
 }
 
+/* Logo responsive */
+.logo {
+  width: 100px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+/* Estilos para móvil */
+@media (max-width: var(--mobile)) {
+  .logo {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .formulario-registro {
+    width: 95%;
+    max-width: 350px;
+    padding: 1.5rem;
+  }
+  
+  .formulario-registro h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .formulario-registro input,
+  .formulario-registro select,
+  .formulario-registro textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .formulario-registro button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Estilos para tablet */
+@media (min-width: var(--tablet)) {
+  .formulario-registro {
+    width: 80%;
+    max-width: 500px;
+    padding: 2rem;
+  }
+  
+  .formulario-registro h1 {
+    font-size: 2rem;
+  }
+  
+  .formulario-registro input,
+  .formulario-registro select,
+  .formulario-registro textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .formulario-registro button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Estilos para escritorio */
+@media (min-width: var(--desktop)) {
+  .formulario-registro {
+    width: 60%;
+    max-width: 600px;
+    padding: 2.5rem;
+  }
+  
+  .formulario-registro h1 {
+    font-size: 2.5rem;
+  }
+  
+  .formulario-registro input,
+  .formulario-registro select,
+  .formulario-registro textarea {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  .formulario-registro button {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1.2rem;
+  }
+}

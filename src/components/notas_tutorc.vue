@@ -23,6 +23,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Navbar from '../components/navbar.vue'
+import '../style/notas-tutor.css'
 
 const nuevoComentario = ref('')
 const comentarios = ref([])
@@ -51,75 +52,3 @@ function guardarComentario() {
   nuevoComentario.value = ''
 }
 </script>
-
-<style scoped>
-.contenido {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #f4f4f4;
-  padding: 2rem;
-}
-
-.comentarios-box {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-h1 {
-  color: #2d4225;
-  margin-bottom: 0.5rem;
-}
-
-p, label {
-  color: #333;
-}
-
-input {
-  padding: 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  width: 100%;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  align-self: flex-start;
-  transition: background 0.2s;
-}
-button:hover {
-  background-color: #3e8e41;
-}
-
-.historial {
-  margin-top: 1rem;
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-}
-.historial h3 {
-  margin-bottom: 0.5rem;
-  color: #112712;
-}
-.historial ul {
-  padding-left: 1rem;
-  color: #112712;
-}
-.historial li {
-  margin-bottom: 0.3rem;
-}
-</style>

@@ -42,6 +42,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
+import '../style/agendar-cita.css'
 
 const fecha = ref('')
 const hora = ref('')
@@ -103,71 +104,4 @@ const agendarCita = () => {
     }, 1500)
 }
 </script>
-
-<style scoped>
-.agendar-cita {
-    text-align: center;
-    margin: 7rem auto; /* Cambia el valor según lo que necesites */
-    width: 60vw;
-    min-height: 200px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    padding: 4rem;
-    background-color: #e5f4d4;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-    width: 50%;
-    margin-left: 25%;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #9bb055;
-    font-weight: bold;
-}
-
-input, select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn-agendar {
-    background-color: #3c763d;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 50%;
-    margin-top: 1rem;
-}
-
-.btn-agendar:hover {
-    background-color: #2a5f2c;
-}
-h1 {
-    color: #2d4225;
-    margin-bottom: 0.5rem;
-}
-h2 {
-    color: #2d4225;
-    margin-bottom: 0.5rem;
-}
-.mensaje {
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    background-color: #d4edda;
-    color: #155724;
-    font-weight: bold;
-}
-</style>
     

@@ -6,16 +6,22 @@ nav {
     left: 0;
     width: 100%;
     position: fixed;
-    color: #9bb055;
     z-index: 1000;
-    background-color: #9bb055;
+    background: linear-gradient(135deg,  #387b2b 0%,#2e5626 50%, #387b2b 50%, #1f4418 100%);
     padding: 0 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
+
 .logo {
     width: 60px;
     height: 60px;
     margin: 0;
     display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 ul {
@@ -37,16 +43,46 @@ li .router-link-active {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
 }
 
 li a:hover,
 li .router-link-active {
-    background-color: #111;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .active {
-    background-color: #04AA6D;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
     color: white;
+}
+
+/* Estilos para el botón de logout */
+.boton-logout {
+    display: block;
+    color: white;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    text-align: center;
+    padding: 14px 20px;
+    border: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+}
+
+.boton-logout:hover {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
 }

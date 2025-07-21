@@ -13,7 +13,6 @@ import Notas_tutor from '@/views/Notas_tutor.vue'
 import EditarPerfil from '@/views/Editar-perfil.vue'
 import AgendarCita from '@/views/Agendar.cita.vue'
 const routes = [
-    // { path: '/', component: App },
     { path: '/', component: home },
     { path: '/registro', component: Register },
     { path: '/dashboard', component: dashboard },

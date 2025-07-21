@@ -1,0 +1,329 @@
+/* src/style/dashboard.css */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.bienvenida {
+  background: #edecec;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 0.2rem;
+  margin-top: 2rem;
+}
+
+.contenedor {
+  background: #edecec;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h2, h3, p {
+  color: #112712;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para tabla en desktop */
+.table-container {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.desktop-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.desktop-table th,
+.desktop-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: #112712;
+  font-weight: 500;
+}
+
+.desktop-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #112712;
+}
+
+.desktop-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.download-btn {
+  background-color: #9bb055;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #7a9142;
+}
+
+
+.mobile-cards {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ficha-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #9bb055;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-header h4 {
+  color: #112712;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+}
+
+.fecha {
+  color: #666;
+  font-size: 0.9rem;
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.descripcion {
+  color: #555;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.4;
+}
+
+.descarga-btn-mobile {
+  background-color: #9bb055;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.download-btn-mobile:hover {
+  background-color: #7a9142;
+}
+
+.no-data-mobile {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Botones de navegación */
+.botones {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones a {
+  text-decoration: none;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.botones button {
+  background-color: #9bb055;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  font-weight: 500;
+  text-align: center;
+}
+
+.botones button:hover {
+  background-color: #7a9142;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0.5rem;
+  }
+
+  .bienvenida,
+  .contenedor {
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Ocultar tabla en móviles */
+  .table-container {
+    display: none;
+  }
+
+  /* Mostrar tarjetas en móviles */
+  .mobile-cards {
+    display: flex;
+  }
+
+  .botones {
+    padding: 1.5rem;
+  }
+
+  .botones a {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 0.25rem;
+  }
+
+  .bienvenida,
+  .contenedor {
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .ficha-card {
+    padding: 1rem;
+  }
+
+  .card-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .botones {
+    padding: 1rem;
+  }
+
+  .botones button {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fecha {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .dashboard {
+    padding: 2rem;
+  }
+
+  .bienvenida,
+  .contenedor {
+    max-width: 1000px;
+    padding: 2.5rem;
+  }
+
+  .botones a {
+    min-width: 220px;
+    max-width: 280px;
+  }
+}

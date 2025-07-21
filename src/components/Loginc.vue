@@ -1,5 +1,5 @@
 <template>
-  <Background />
+
   <Navbar2 />
   <div class="contenedor">
       <div class="formulario-registro">
@@ -15,13 +15,12 @@
         <p>¿No tienes cuenta? <a href="/registro">Regístrate aquí</a></p>
       </div>
     </div>
-
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import Background from '../components/background.vue'
+
 import Navbar2 from '@/components/navbar2.vue'
 
 const vFocus = {
@@ -45,7 +44,6 @@ const iniciarSesion = () => {
   }
 }
 </script>
-<style scoped src="../assets/background.css"> </style>
 <style scoped>
 :global(html, body) {
   margin: 0;
@@ -56,49 +54,71 @@ const iniciarSesion = () => {
 }
 
 .contenedor {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #edecec;
+  max-width: none !important;
 }
+.logo {
+  width: 100px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .formulario-registro {
-  background-color: #9bb055;
-  padding: 2rem;
+  background-color: #edecec;
+  padding: 1rem;
+  /* margin-top: 0rem; */
   border-radius: 8px;
-  color: white;
+  color: black;
   text-align: center;
   width: 90vw;
   max-width: 400px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  /* background-color: rgba(155, 176, 85, 0.9);  */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.50);
 }
+
 
 label {
   display: block;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  width: 300px;
+  max-width: 80%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 button {
   background-color: #3c763d;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 2rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  width: 100%;
+  width: 200px;
+  margin-top: 1rem;
 }
 
 button:hover {
@@ -112,14 +132,14 @@ a {
 
 p {
   margin-top: 1rem;
-  color: white;
+  color: black;
   font: 16px georgia, serif;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: white;
+  color: black;
   font: bold 24px georgia, serif;
 }
 </style>

@@ -1,0 +1,177 @@
+/* Estilos para el componente Agendar Cita */
+
+.agendar-cita {
+    text-align: center;
+    margin: 6rem auto;
+    width: 90vw;
+    max-width: 700px;
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #ffffff, #f8fdf9);
+    border: 1px solid #e8f5e8;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.agendar-cita .form-group {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.agendar-cita label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #2d5016;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.agendar-cita input, 
+.agendar-cita select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e8f5e8;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.agendar-cita input:focus, 
+.agendar-cita select:focus {
+    outline: none;
+    border-color: #9bb055;
+    box-shadow: 0 0 0 3px rgba(155, 176, 85, 0.2);
+    transform: translateY(-2px);
+}
+
+.agendar-cita select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232d5016' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+}
+
+.agendar-cita .btn-agendar {
+    background: linear-gradient(135deg, #9bb055, #7d9448);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 250px;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(155, 176, 85, 0.3);
+}
+
+.agendar-cita .btn-agendar:hover {
+    background: linear-gradient(135deg, #7d9448, #6b7d3d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(155, 176, 85, 0.4);
+}
+
+.agendar-cita .btn-agendar:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(155, 176, 85, 0.3);
+}
+
+.agendar-cita h1 {
+    color: #2d5016;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.agendar-cita h2 {
+    color: #555;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.agendar-cita .mensaje {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 1px solid #b8dacc;
+    box-shadow: 0 4px 12px rgba(21, 87, 36, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mejoras para dispositivos móviles */
+@media (max-width: 768px) {
+    .agendar-cita {
+        width: 95vw;
+        padding: 2rem 1.5rem;
+        margin: 4rem auto;
+    }
+    
+    .agendar-cita h1 {
+        font-size: 2rem;
+    }
+    
+    .agendar-cita h2 {
+        font-size: 1.1rem;
+    }
+    
+    .agendar-cita .form-group {
+        max-width: 100%;
+    }
+    
+    .agendar-cita .btn-agendar {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .agendar-cita {
+        padding: 1.5rem 1rem;
+        margin: 3rem auto;
+    }
+    
+    .agendar-cita h1 {
+        font-size: 1.8rem;
+    }
+    
+    .agendar-cita h2 {
+        font-size: 1rem;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
