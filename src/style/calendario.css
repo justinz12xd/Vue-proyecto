@@ -287,3 +287,213 @@
 .ventana-evento button[type="button"]:hover {
   background: linear-gradient(135deg, #bbb, #999);
 }
+
+/* Media Queries para Responsive Design */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .caja-calendario {
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .caja-calendario h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calendario {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .cabecera-calendario {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  .cabecera-calendario button {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .rejilla-calendario {
+    gap: 6px;
+  }
+
+  .dia-calendario {
+    padding: 0.8rem 0.4rem;
+    min-height: 50px;
+  }
+
+  .dia-calendario span {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .dia-calendario.header {
+    font-size: 0.8rem;
+  }
+
+  .volver {
+    width: 150px;
+    font-size: 14px;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .ventana-evento {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .ventana-evento h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .caja-calendario {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+  }
+
+  .caja-calendario h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .calendario {
+    padding: 1rem;
+  }
+
+  .cabecera-calendario {
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cabecera-calendario button {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .rejilla-calendario {
+    gap: 4px;
+  }
+
+  .dia-calendario {
+    padding: 0.6rem 0.2rem;
+    min-height: 45px;
+    border-radius: 8px;
+  }
+
+  .dia-calendario span {
+    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .dia-calendario.header {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.1rem;
+  }
+
+  .punto-evento, .punto-medico {
+    width: 8px;
+    height: 8px;
+    margin: 1px auto;
+  }
+
+  .volver {
+    width: 120px;
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    margin-top: 15px;
+  }
+
+  .ventana-evento {
+    width: 98%;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .ventana-evento h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .lista-eventos {
+    padding: 1rem;
+  }
+
+  .seccion-medica h4, .otros-eventos h4 {
+    font-size: 1.1rem;
+  }
+
+  .ventana-evento input {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .ventana-evento button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .ventana-evento button[type="button"] {
+    width: 120px;
+    margin-left: calc(50% - 60px);
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .caja-calendario h2 {
+    font-size: 1.5rem;
+  }
+
+  .calendario {
+    padding: 0.8rem;
+  }
+
+  .cabecera-calendario {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .cabecera-calendario button {
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .rejilla-calendario {
+    gap: 2px;
+  }
+
+  .dia-calendario {
+    padding: 0.4rem 0.1rem;
+    min-height: 40px;
+    border-radius: 6px;
+  }
+
+  .dia-calendario span {
+    font-size: 0.8rem;
+  }
+
+  .dia-calendario.header {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.1rem;
+  }
+
+  .punto-evento, .punto-medico {
+    width: 6px;
+    height: 6px;
+  }
+
+  .volver {
+    width: 100px;
+    font-size: 11px;
+    padding: 0.4rem 0.8rem;
+  }
+}

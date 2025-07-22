@@ -100,7 +100,7 @@ label {
 
 input {
   width: 300px;
-  max-width: 80%;
+  max-width: 100%;
   padding: 0.75rem;
   margin-bottom: 1.5rem;
   border: 1px solid #ccc;
