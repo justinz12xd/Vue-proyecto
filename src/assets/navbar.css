@@ -86,3 +86,110 @@ li .router-link-active {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
 }
+
+/* Media Queries para Responsive Design */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    li {
+        margin-left: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    li a,
+    li .router-link-active {
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .boton-logout {
+        padding: 10px 15px;
+        font-size: 13px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    nav {
+        padding: 0 0.5rem;
+        min-height: 60px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    ul {
+        gap: 0.25rem;
+        margin-right: 0.5rem;
+    }
+
+    li {
+        margin-left: 0;
+    }
+
+    li a,
+    li .router-link-active {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin: 0 2px;
+    }
+
+    .boton-logout {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin: 0 2px;
+        min-width: 60px;
+        flex-shrink: 0;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 320px) {
+    nav {
+        padding: 0 0.25rem;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    li a,
+    li .router-link-active {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .boton-logout {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-width: 50px;
+    }
+}
