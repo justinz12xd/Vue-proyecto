@@ -74,9 +74,8 @@ const agendarCita = () => {
         return
     }
 
-    // Crear el objeto de la cita
     const nuevaCita = {
-        id: Date.now(), // Usar timestamp como ID único
+        id: Date.now(), 
         fecha: fecha.value,
         hora: hora.value,
         tipo: tipo.value,

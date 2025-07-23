@@ -20,13 +20,13 @@
           class="dia-calendario"
           :class="{ 
             hoy: isToday(day), 
-            'tiene-cita': hasMedicalAppointment(day),
+            'tiene-cita': tienecitaono(day),
             'tiene-evento': getEventsForDay(day).length > 0
           }"
           @click="selectDay(day)"
         >
           <span>{{ day }}</span>
-          <div v-if="hasMedicalAppointment(day)" class="punto-medico"></div>
+          <div v-if="tienecitaono(day)" class="punto-medico"></div>
           <div v-if="getEventsForDay(day).length > 0" class="punto-evento"></div>
           
         </div>
@@ -112,7 +112,7 @@ const selectDay = (day) => {
 }
 
 // Verificar si hay citas médicas para el día
-const hasMedicalAppointment = (day) => {
+const tienecitaono = (day) => {
   const date = `${year.value}-${padZero(month.value + 1)}-${padZero(day)}`
   return citasMedicas.value.some(appointment => appointment.fecha === date)
 }
