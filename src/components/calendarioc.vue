@@ -30,7 +30,7 @@
           <div v-if="getEventsForDay(day).length > 0" class="punto-evento"></div>
           
         </div>
-      </div>
+      </div >
       <button type="button" class="volver" @click="volver">Volver</button>
     </div>
 

@@ -1,7 +1,7 @@
 /* Estilos para el componente Calendario */
 
 .volver {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
+  background: linear-gradient(135deg, #9bb055, #7d9448);
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -10,14 +10,15 @@
   font-size: 16px;
   font-weight: 500;
   width: 200px;
-  margin-top: 20px;
+  margin: 20px auto 0;
+  display: block;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 2px 8px rgba(155, 176, 85, 0.3);
 }
 
 .volver:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 4px 12px rgba(155, 176, 85, 0.4);
 }
 
 .caja-calendario {
@@ -86,6 +87,7 @@
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .dia-calendario {
@@ -224,13 +226,13 @@
 }
 
 .seccion-medica li::before {
-  content: "🩺";
+
   position: absolute;
   left: 0.5rem;
 }
 
 .otros-eventos li::before {
-  content: "📅";
+
   position: absolute;
   left: 0.5rem;
 }
@@ -339,6 +341,7 @@
     width: 150px;
     font-size: 14px;
     padding: 0.6rem 1.2rem;
+    margin: 15px auto 0;
   }
 
   .ventana-evento {
@@ -409,7 +412,7 @@
     width: 120px;
     font-size: 12px;
     padding: 0.5rem 1rem;
-    margin-top: 15px;
+    margin: 15px auto 0;
   }
 
   .ventana-evento {
@@ -495,5 +498,6 @@
     width: 100px;
     font-size: 11px;
     padding: 0.4rem 0.8rem;
+    margin: 10px auto 0;
   }
 }
